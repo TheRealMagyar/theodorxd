@@ -142,7 +142,9 @@
   padding: clamp(12px, 3vh, 22px) 0;
 }
 .logo {
+  margin-top: 35px;
   height: clamp(130px, 24vw, 300px);
+  width: auto;
   filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.5));
 }
 

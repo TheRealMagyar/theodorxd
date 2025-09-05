@@ -73,7 +73,7 @@ export default function Gallery({ imageFiles }: GalleryProps) {
           id="lbImg"
           src={lightboxSrc}
           alt="Meme preview"
-          width={800}
+          width={600}
           height={600}
           className={styles.lightboxImage}
         />
