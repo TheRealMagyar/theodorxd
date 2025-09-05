@@ -175,7 +175,7 @@ export default function ShitGame() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Shit Game - The Odor | $ODOR</title>
+        <title>The Odor | $ODOR</title>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
 

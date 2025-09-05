@@ -454,3 +454,167 @@
     height: 200px; /* Smaller height for mobile */
   }
 }
+
+/* ---------- End of CSS ---------- */
+.historyLink,
+.gameLink {
+  color: #bda51e; /* Gold to match scam coins in shit game */
+  text-decoration: none;
+  font-weight: bold;
+}
+/* das */
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.tooltipText {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%; /* Position above the heading */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9); /* Match $ODOR dark aesthetic */
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  white-space: nowrap;
+  z-index: 10; /* Above other elements */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tooltip:hover .tooltipText,
+.tooltip.active .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .tooltipText {
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    padding: 6px 10px;
+    white-space: normal; /* Allow wrapping on small screens */
+    max-width: 80vw; /* Prevent overflow */
+  }
+}
+
+/* dsadasdsdasdasdsafadfasdfsdfsdfdsfsdf */
+/* src/app/home.module.css */
+
+/* ---------- CodePen film overlay (scoped) ---------- */
+.filmwrap, .filmwrap *,.filmwrap *::before,.filmwrap *::after{ position:absolute }
+.filmwrap{inset:0; z-index:1; pointer-events:none; position: fixed; } /* Fixed to cover full page */
+
+/* Background moved INTO the filtered content so sepia affects it */
+.filmwrap .content{
+  position: fixed;
+  inset: 0;
+  display:flex; align-items:center; justify-content:center;
+  filter: sepia(0.75);
+
+  inset:0;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  
+  filter: sepia(0.75);
+}
+
+.filmwrap .film, .filmwrap .effect{width:100%; height:100%; filter: blur(0.45px) drop-shadow(0 0 0 #fff1)}
+.filmwrap .film:after, .filmwrap .effect:after{
+  content:''; width:120%; height:100%; top:0; left:0; padding-left:100px; opacity:.5;
+  animation: film-scratch .45s steps(1) infinite;
+  background: repeating-linear-gradient(90deg, #0002 0 2px, transparent 4px 37vmin);
+}
+.filmwrap .effect:after{ left:30%; animation: effect-scratch 2s infinite }
+.filmwrap .grain{width:100%; height:100%}
+.filmwrap .grain:after{
+  content:''; width:110%; height:110%; top:-5%; left:-5%; opacity:.25;
+  background-image:
+    repeating-conic-gradient(#000 0%, transparent .00003%, transparent .0005%, transparent .00095%),
+    repeating-conic-gradient(#000 0%, transparent .00005%, transparent .00015%, transparent .0009%);
+  animation: grain .5s steps(1) infinite; filter: drop-shadow(0 0 1px #000);
+}
+
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-1%,-1%)}20%{transform:translate(1%,1%)}30%{transform:translate(-2%,-2%)}40%{transform:translate(3%,3%)}50%{transform:translate(-3%,-3%)}60%{transform:translate(4%,4%)}70%{transform:translate(-4%,-4%)}80%{transform:translate(2%,2%)}90%{transform:translate(-3%,-3%)}}
+@keyframes film-scratch{0%,100%{transform:translateX(0); opacity:.5}10%{transform:translateX(-1%)}20%{transform:translateX(1%)}30%{transform:translateX(-2%); opacity:.75}40%{transform:translateX(3%)}50%{transform:translateX(-3%); opacity:.5}60%{transform:translateX(8%)}70%{transform:translateX(-3%)}80%{transform:translateX(10%); opacity:.25}90%{transform:translateX(-2%)}}
+@keyframes effect-scratch{0%{transform:translateX(0); opacity:.75}10%{transform:translateX(-1%)}20%{transform:translateX(1%)}30%{transform:translateX(-2%)}40%{transform:translateX(3%)}50%{transform:translateX(-3%); opacity:.5}60%{transform:translateX(8%)}70%{transform:translateX(-3%)}80%{transform:translateX(10%); opacity:.25}90%{transform:translateX(20%)}100%{transform:translateX(30%)}}
+
+/* Bottom gradient fade (force deep black, cover full width, sit on top) */
+.fade{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 100vh;                 /* fully overlap viewport */
+  z-index: 3;
+  pointer-events: none;
+  /* Smooth fade up over background & animation */
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,1.00) 0%,
+    rgba(0,0,0,0.90) 20%,
+    rgba(0,0,0,0.70) 40%,
+    rgba(0,0,0,0.45) 60%,
+    rgba(0,0,0,0.25) 78%,
+    rgba(0,0,0,0.10) 90%,
+    rgba(0,0,0,0.00) 100%
+  );
+  transform: translateZ(0);  /* force GPU compositing for smoothness */
+}
+
+/* ---------- Layout & Panels ---------- */
+.wrap{width:min(1200px, 92vw); margin:0 auto}
+.center{display:flex; justify-content:center; align-items:center}
+.site-header{position:relative; z-index:4; padding: clamp(12px, 3vh, 22px) 0}
+.logo{height: clamp(130px, 24vw, 300px); filter:drop-shadow(0 10px 26px rgba(0,0,0,.5))}
+
+.panel{position:relative; z-index:4; background: rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.12); border-radius:16px; box-shadow: 0 12px 36px rgba(0,0,0,.45); padding: clamp(14px, 2vw, 22px); margin: 14px 0; backdrop-filter: blur(4px)}
+.contract-row{display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap}
+.ca-label{font-weight:800; opacity:.9}
+.ca{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:700}
+.btn,.icon{display:inline-grid; place-items:center; height:40px; width:40px; border-radius:10px; border:1px solid rgba(255,255,255,.15); background:#111a; color:#fff; cursor:pointer; transition: transform .08s, background .2s}
+.btn:hover,.icon:hover{transform:translateY(-1px); background:#222c}
+
+.about h2{margin:0 0 6px 0; font-size: clamp(20px, 2.4vw, 28px)}
+.about p{margin:.5rem 0}
+
+/* Gallery */
+.gallery-block h2{margin:0; font-size: clamp(20px, 2.4vw, 28px)}
+.gallery{display:grid; gap:14px; grid-template-columns: repeat(4, 1fr); margin-top:12px}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.card{position:relative; overflow:hidden; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:#0c0c0caa}
+.card img{display:block; width:100%; aspect-ratio:1/1; object-fit:cover; transition:transform .2s ease; filter:contrast(1.03) saturate(1.03)}
+.card:hover img{transform:scale(1.03)}
+.card .zoom{position:absolute; right:8px; bottom:8px; padding:6px 10px; background:#0009; border:1px solid rgba(255,255,255,.14); border-radius:10px; font-size:.85rem; opacity:0; transform:translateY(6px); transition:all .2s}
+.card:hover .zoom{opacity:1; transform:translateY(0)}
+
+/* Lightbox */
+.lightbox{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.9); z-index:9999}
+.lightbox.open{display:grid}
+.lightbox img{max-width:92vw; max-height:82vh; border-radius:12px; box-shadow:0 16px 40px rgba(0,0,0,.6)}
+.lightbox .close{position:absolute; top:16px; right:18px; font-size:34px; background:none; border:none; color:#fff; cursor:pointer}
+.lightbox .download{position:absolute; left:16px; top:16px; background:#111a; color:#fff; border:1px solid rgba(255,255,255,.15); padding:8px 12px; border-radius:10px; text-decoration:none}
+
+/* responsive bg image inside filmwrap */
+.filmwrap .bg-img{
+  position:absolute;
+  inset:0;
+  width:100vw;
+  height:100vh;
+  object-fit:cover;
+  z-index:0;
+}
+.filmwrap .film, .filmwrap .effect, .filmwrap .grain{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
