@@ -71,6 +71,23 @@ export default async function Home() {
           </p>
         </section>
 
+        <section className={`${styles.panel} ${styles.memecoinomics}`}>
+          {/* <h2>Memecoinomics</h2> */}
+          <h3>Supply Breakdown</h3>
+          <ul>
+            <li>52% Public Sale (bonding curve)</li>
+            <li>48% Dev Wallet</li>
+          </ul>
+          <h3>Dev Wallet Allocation</h3>
+          <ul>
+            <li>25% Burn, liquidity, reserves</li>
+            <li>15% Community & external airdrops</li>
+            <li>5% DeFi/staking incentives</li>
+            <li>2% Marketing, partnerships, collabs</li>
+            <li>1% Contest winner</li>
+          </ul>
+        </section>
+
         <section className={`${styles.panel} ${styles.galleryBlock}`}>
           <h2>Meme Gallery</h2>
           <Gallery imageFiles={imageFiles} />

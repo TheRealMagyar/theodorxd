@@ -271,3 +271,30 @@
   object-fit: cover;
   z-index: 0;
 }
+
+/* ssda */
+/* Reusing existing panel styles, but you can customize memecoinomics if needed */
+.memecoinomics {
+  /* Add custom styles if desired, e.g., different background or padding */
+  padding: 2rem;
+}
+
+.memecoinomics h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.memecoinomics ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.memecoinomics li {
+  margin-bottom: 0.5rem;
+}
+
+.memecoinomics p {
+  margin-bottom: 1rem;
+}
